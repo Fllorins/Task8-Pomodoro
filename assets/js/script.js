@@ -9,7 +9,7 @@ const buttonTypeLongBreak = document.querySelector('#buttonTypeLongBreak');
 //menu
 
 //time-minutes
-let pomodoroTimerInSeconds = 2; // 60s * 5min
+let pomodoroTimerInSeconds = 1500; // 60s * 5min
 
 let shortBreakTimerInSeconds = 300;
 let longBreakTimerInSeconds = 900;
