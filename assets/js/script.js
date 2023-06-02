@@ -136,7 +136,7 @@ const resetTimer = () => {
 };
 
 const audio = new Audio();
-audio.src = '../../assets/sounds/jutkii-smeh-odinochnyii-mujskoi-zalivnoi-rezkii.wav';
+audio.src = "./assets/sounds/jutkii-smeh-odinochnyii-mujskoi-zalivnoi-rezkii.wav";
 
 function setInfoCircularProgressBar() {
   if (timerValue === 0) {
