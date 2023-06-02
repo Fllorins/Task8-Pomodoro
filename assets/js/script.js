@@ -9,7 +9,7 @@ const buttonTypeLongBreak = document.querySelector('#buttonTypeLongBreak');
 //menu
 
 //time-minutes
-let pomodoroTimerInSeconds = 1500; // 60s * 5min
+let pomodoroTimerInSeconds = 2; // 60s * 5min
 
 let shortBreakTimerInSeconds = 300;
 let longBreakTimerInSeconds = 900;
@@ -136,7 +136,7 @@ const resetTimer = () => {
 };
 
 const audio = new Audio();
-audio.src = 'assets/sounds/jutkii-smeh-odinochnyii-mujskoi-zalivnoi-rezkii.wav';
+audio.src = '../../assets/sounds/jutkii-smeh-odinochnyii-mujskoi-zalivnoi-rezkii.wav';
 
 function setInfoCircularProgressBar() {
   if (timerValue === 0) {
@@ -254,7 +254,6 @@ function onBtnActive(event) {
 const btnSFont = document.querySelector('.menu-font-btns');
 btnSFont.addEventListener('click', onBtnActive, false);
 
-
 const kumbh = document.getElementById('font-kumbh');
 const roboto = document.getElementById('font-roboto');
 const mono = document.getElementById('font-mono');
@@ -275,7 +274,6 @@ fontFamilys.querySelectorAll('.font__btn').forEach(function (el) {
 });
 const forWeightFont = document.querySelectorAll('.font__btn');
 let a;
-
 
 //bg
 let colors;
