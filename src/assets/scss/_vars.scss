@@ -3,18 +3,11 @@ $color-red: #f87070;
 $color-tiffany: #70f3f8;
 $color-purple: #d881f8;
 
-%red-form {
-  font-family: 'Kumbh Sans', sans-serif;
-}
-%red-form {
-  font-family: 'Roboto Slab', serif;
-}
-%red-form {
-  font-family: 'Space Mono', monospace;
-}
-
 :root {
   --color-r: #f87070;
   --color-t: #70f3f8;
   --color-p: #d881f8;
+  --font1: 700 15px/19px 'Kumbh Sans', sans-serif;
+  --font2: 700 15px/20px 'Roboto Slab', serif;
+  --font3: 400 15px/22px 'Space Mono', monospace;
 }

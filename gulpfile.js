@@ -19,6 +19,7 @@ const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 // const jquery = require('jquery');
 const ghPages = require('gulp-gh-pages');
+const audiosprite = require('gulp-audiosprite');
 
 const srcPath = 'src/';
 const distPath = 'dist/';
@@ -30,6 +31,7 @@ const path = {
     js: distPath + 'assets/js/',
     images: distPath + 'assets/images/',
     fonts: distPath + 'assets/fonts/',
+    sounds: distPath + 'assets/sounds/',
   },
   src: {
     html: srcPath + '*.html',
@@ -39,6 +41,7 @@ const path = {
       srcPath +
       'assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
     fonts: srcPath + 'assets/fonts/**/*.{eot,woff,woff2,ttf,svg}',
+    sounds: srcPath + 'assets/sounds/*.wav',
   },
   watch: {
     html: srcPath + '**/*.html',
@@ -49,6 +52,7 @@ const path = {
       'assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
 
     fonts: srcPath + 'assets/fonts/**/*.{eot,woff,woff2,ttf,svg}',
+    sounds: srcPath + 'assets/sounds/**/*.wav',
   },
   clean: './' + distPath,
 };
@@ -150,6 +154,12 @@ function fonts() {
     .pipe(dest(path.build.fonts))
     .pipe(browserSync.reload({ stream: true }));
 }
+function sounds() {
+  return src(path.src.sounds, { base: srcPath + 'assets/sounds/' })
+    .pipe(dest(path.build.sounds))
+    .pipe(browserSync.reload({ stream: true }));
+}
+
 function clean() {
   return del(path.clean);
 }
@@ -160,9 +170,13 @@ function watchFiles() {
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.images], images);
   gulp.watch([path.watch.fonts], fonts);
+  gulp.watch([path.watch.sounds], sounds);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(
+  clean,
+  gulp.parallel(html, css, js, images, fonts, sounds)
+);
 const watch = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
@@ -170,6 +184,7 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
+exports.sounds = sounds;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;

@@ -7,9 +7,13 @@
   color: #d7e0ff;
   opacity: 0.4;
   padding: 19px 25px;
+  transition: all 0.5s;
+}
+.btn:hover {
+  opacity: 1;
 }
 .card {
-  font-family: 'Kumbh Sans', sans-serif;
+  font: var(--font1);
 }
 .pomdoro {
   height: 100vh;
@@ -39,7 +43,7 @@
   }
 }
 
-.active {
+.btn.active {
   padding: 19px 26px;
   background: var(--color-r);
   border-radius: 26.5px;
@@ -123,20 +127,27 @@
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  transition: all 0.8s;
+}
+.btn-remote:hover {
+  color: var(--color-r);
 }
 .settings-vision {
   .settings__btn {
     border: none;
     opacity: 0.5;
+    transition: all 0.4s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
   .settings__btn.open-block {
     cursor: default;
     opacity: 0.3;
   }
 }
-.setting {
-  position: relative;
-}
+
 .minutes-choosing {
   display: flex;
   gap: 20px;
@@ -149,23 +160,18 @@
   background: #ffffff;
   color: #161932;
   font-weight: 700;
-
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 5px;
   border-radius: 25px;
-  text-align: start;
-  position: absolute;
-  z-index: 50;
-  bottom: 810px;
-  right: 1095px;
+  position: sticky;
+  margin-top: -605px;
 }
 .setting-header-head {
   font-size: 28px;
   line-height: 35px;
   letter-spacing: 1px;
   text-align: start;
-  border-bottom: 1px solid #e3e1e1;
   padding: 34px 40px 25px;
 }
 .setting-menu {
@@ -212,11 +218,16 @@ input[type='number']::-webkit-outer-spin-button,
   right: 16px;
   display: flex;
   flex-direction: column;
-  .btn__link {
-    cursor: pointer;
-  }
 }
-
+.btn__link {
+  cursor: pointer;
+}
+.btn__link path {
+  transition: all 0.4s;
+}
+.btn__link:hover path {
+  stroke-opacity: 1;
+}
 .pomdoro {
   position: relative;
 }
@@ -241,35 +252,50 @@ input[type='number']::-webkit-outer-spin-button,
 .menu-font-btns {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 6px;
 }
 .menu-font__btn {
-  .font__btn {
-    width: 40px;
-    height: 40px;
-    background: #eff1fa;
-    border: 1px solid #eff1fa;
-    border-radius: 50%;
-    opacity: 0.73;
-    color: #1e213f;
-  }
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  padding: 4px;
+  transition: all 0.6s;
 }
+.menu-font__btn:hover {
+  border: 1px solid #eff1fa;
+}
+.menu-font__btn:active {
+  border: 1px solid #eff1fa;
+}
+.font__btn {
+  width: 40px;
+  height: 40px;
+  background: #eff1fa;
+  border: 1px solid #eff1fa;
+  border-radius: 50%;
+  opacity: 0.73;
+  color: #1e213f;
+  margin: auto 0;
+  display: inline-block;
+}
+
 #font-kumbh {
-  font-family: 'Kumbh Sans', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 19px;
+  font: 700 15px/19px 'Kumbh Sans', sans-serif;
+  // font-weight: 700;
+  // font-size: 15px;
+  // line-height: 19px;
 }
 #font-roboto {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
+  font: 400 15px/20px 'Roboto Slab', serif;
+  // font-weight: 400;
+  // font-size: 15px;
+  // line-height: 20px;
 }
 #font-mono {
-  font-family: 'Space Mono', monospace;
-  font-size: 15px;
-  line-height: 22px;
+  font: 700 15px/22px 'Space Mono', monospace;
+  // font-size: 15px;
+  // line-height: 22px;
 }
 
 .font__btn.active__font {
@@ -288,30 +314,50 @@ input[type='number']::-webkit-outer-spin-button,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-
-  .menu-color-btn {
-    border-radius: 50%;
-    border: 1px solid #0e112a;
-    z-index: 1;
-  }
+  gap: 6px;
+}
+.menu-color__btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid transparent;
+  padding: 4px;
+  transition: all 0.6s;
+}
+.menu-color__btn:hover {
+  border: 1px solid #eff1fa;
+}
+.menu-color__btn:active {
+  border: 1px solid #eff1fa;
 }
 .color__btn {
-  content: '';
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  border: none;
+  content: '';
+
+  border: 1px solid transparent;
+  z-index: 1;
 }
-#red {
+.check {
+  z-index: 50;
+  margin: 0 auto;
+  display: none;
+}
+.color__btn.active__back .check {
+  display: block;
+}
+
+.menu-color__btn:first-child .color__btn {
   background: $color-red;
 }
-#tiffany {
+.menu-color__btn:nth-child(2) .color__btn {
   background: $color-tiffany;
 }
-#purple {
+.menu-color__btn:nth-child(3) .color__btn {
   background: $color-purple;
 }
+
 .setting__apply {
   position: absolute;
   bottom: -20px;
@@ -326,4 +372,30 @@ input[type='number']::-webkit-outer-spin-button,
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+  transition: all 0.8s;
 }
+.setting__btn-apply:hover {
+  background: #f98d8d;
+}
+.setting__btn-apply:active {
+  background: #f98d8d;
+}
+.setting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e1e1;
+}
+.chest {
+  padding-right: 30px;
+}
+.chest__img {
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.8s;
+}
+.chest__img:hover {
+  opacity: 1;
+}
+@import './components/media';

@@ -1,117 +1,108 @@
-@media (max-width: 1200px) {
-  .main,
-  .hide {
-    padding: 55px 64px 100px;
-  }
-  .head-d {
-    white-space: nowrap;
-  }
-  .date-d-left {
-    margin-right: 50px;
-  }
-  .date-d-right {
-    margin-left: 50px;
+@media (max-width: 765px) {
+  .card-active {
+    margin-bottom: 145px;
   }
 }
-@media (max-width: 1000px) {
-  .date-vision {
+@media (max-width: 630px) {
+  .setting-header-head {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .menu-head {
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 4.23077px;
+  }
+  .setting-menu {
+    padding: 24px;
+  }
+  .minutes-choosing {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 8px;
   }
-  .date-timezone {
-    margin-bottom: 105px;
-  }
-  .date-head {
-    font-size: 100px;
-    line-height: 100px;
-
-    letter-spacing: -2.5px;
-  }
-  .date-zone {
-    font-size: 15px;
-    line-height: 28px;
-    margin-bottom: 6px;
-  }
-}
-
-@media (max-width: 973px) {
-  .date-container {
-  }
-  .hide {
-    padding: 55px 26px 80px;
-  }
-
-  .main {
-    padding: 30px 10px 40px;
-  }
-
-  .zone-d {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
-  }
-  .head-d {
-    font-size: 13px;
-    line-height: 28px;
-    letter-spacing: 2.6px;
-  }
-}
-@media (max-width: 380px) {
-  .date-container {
-  }
-}
-@media (max-width: 675px) {
-  .hide {
-    padding: 30px 25px 40px;
-  }
-  .date-hidden {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(1fr, 4);
-  }
-  .date-long {
-    display: none;
-  }
-  .date-d {
+  .menu-choice {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .date-d-left {
-    margin: 0;
+  .input-val {
+    padding: 15px 15px 11px;
   }
-  .date-d-right {
-    margin: 0;
+  .btns {
+    top: 12px;
   }
-  .date-d {
-    margin-bottom: 16px;
+  .menu-font {
+    flex-direction: column;
   }
-  .head-d {
-    margin-bottom: 0;
+  .menu-font__head {
+    margin-bottom: 18px;
   }
-  .zone-d {
-    font-size: 20px;
-    line-height: 24px;
+  .menu-color {
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
+  .menu-color__head {
+    margin-bottom: 18px;
+  }
+  .setting__apply {
+    left: 140px;
+  }
+  .setting__btn-apply {
+    padding: 17px 46px 20px;
   }
 }
-@media (max-width: 450px) {
-  .head-d {
-    font-size: 10px;
-    line-height: 28px;
-    letter-spacing: 2px;
+@media (max-width: 500px) {
+  .active-wrapper-one {
+    width: 300px;
+    height: 300px;
+  }
+  .active-wrapper-second {
+    width: 267.8px;
+    height: 267.8px;
+  }
+  .progress-bar {
+    width: 248.05px;
+    height: 248.05px;
+  }
+  .progress-bar-inner {
+    width: 238.05px;
+    height: 238.05px;
+  }
+  .progress-value {
+    font-size: 80px;
+    line-height: 99px;
+    letter-spacing: -4px;
+  }
+
+  .card-header {
+    .card-header-buttons {
+      gap: 5;
+    }
+  }
+  .btn {
+    padding: 5px;
+  }
+  .btn.active {
+    padding: 18px 23px;
+  }
+  .header__btn {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .btn-remote {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 13.125px;
+  }
+  .setting__apply {
+    left: 80px;
   }
 }
 @media (max-width: 374px) {
   .main {
     padding: 30px 5px 40px;
   }
-  .zone-d {
-    font-size: 17px;
-    font-weight: 400;
-  }
-  .head-d {
-    letter-spacing: 0.5px;
-  }
-  .date-head {
-    font-size: 88px;
+  .progress-value {
+    font-size: 80px;
   }
 }

@@ -63,7 +63,7 @@
                     <div class="progress-bar" id="circularProgressBar">
                       <div class="progress-bar-inner">
                         <div class="progress-bar-inners">
-                          <h2 class="progress-value">25:00</h2>
+                          <h2 class="progress-value" id="forWeight">25:00</h2>
                           <div class="progress-btns">
                             <div class="card-footer">
                               <button id="start" class="btn-remote">
@@ -97,14 +97,16 @@
 
               <div class="setting-hide hide">
                 <div class="setting-header">
-                  <div class="container-hide">
+                  
                     <div class="setting-header-head">
                       <h2>Settings</h2>
                     </div>
 
-                    <div class="hamb" id="hamb"></div>
-                  </div>
+                    <div class="chest">
+                      <img class="chest__img" src="./assets/images/chest.svg" alt="chest">
+                    </div>
                 </div>
+                
 
                 <div class="setting-menu">
                   <div class="container-hide">
@@ -124,7 +126,7 @@
                               max="75"
                               value="25"
                               step="5"
-                              id="pomodoro-timer"
+                              id="pomodoro-timer" name="pomodoro"
                             />
                             <div class="btns">
                               <button href="#!" class="btn__link btn-incrise">
@@ -173,7 +175,7 @@
                               max="7"
                               value="5"
                               step="1"
-                              id="short-timer"
+                              id="short-timer" name="short"
                             />
 
                             <div class="btns">
@@ -223,7 +225,7 @@
                               max="30"
                               value="15"
                               step="5"
-                              id="long-timer"
+                              id="long-timer" name="long"
                             />
                             <div class="btns">
                               <button href="#!" class="btn__link btn-incrise">
@@ -276,7 +278,7 @@
                             class="font__btn active__font"
                             id="font-kumbh"
                             name="kumbh"
-                            value="Kumbh Sans"
+                            value="var(--font1)"
                           >
                             Aa
                           </button>
@@ -286,7 +288,7 @@
                             class="font__btn"
                             id="font-roboto"
                             name="roboto"
-                            value="Roboto Slab"
+                            value="var(--font2)"
                           >
                             Aa
                           </button>
@@ -296,7 +298,8 @@
                             class="font__btn"
                             id="font-mono"
                             name="mono"
-                            value="Space Mono, monospace"
+                            value="var(--font3)"
+                            
                           >
                             Aa
                           </button>
@@ -310,13 +313,10 @@
                       </div>
 
                       <div class="menu-color-btns">
+                        
                         <div class="menu-color__btn">
-                          <button
-                            class="color__btn"
-                            id="red"
-                            value="#F87070"
-                          >
-                          <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
+                          <button class="color__btn active__back" id="red" value="#F87070">
+                            <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
                           </button>
                         </div>
                         <div class="menu-color__btn">
@@ -325,8 +325,7 @@
                             id="tiffany"
                             value="var(--color-t)"
                           >
-                          <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
-                          
+                            <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
                           </button>
                         </div>
                         <div class="menu-color__btn">
@@ -335,8 +334,7 @@
                             id="purple"
                             value="var(--color-p)"
                           >
-                          <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
-                          
+                            <img class="check" src="../assets/images/checkmark.svg" alt=""></img>
                           </button>
                         </div>
                       </div>
@@ -348,8 +346,6 @@
                   <button class="setting__btn-apply">Apply</button>
                 </div>
               </div>
-
-              
             </div>
           </div>
         </section>
